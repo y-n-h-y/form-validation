@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #00679a;
+    text-align: center;
+
+    h1 {
+        padding: 20px 0;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+}
+
+main {
+    background-color: #efefef;
+
+    .description {
+        text-align: center;
+        padding: 40px 0 10px;
+
+        p {
+            color: #3c3c3c;
+        }
+    }
+
+    .required-mark {
+        color: red;
+    }
+
+    form {
+        width: 800px;
+        max-width: 90%;
+        margin: auto;
+        padding: 20px 0;
+
+        .form-group {
+            position: relative;
+            margin: 40px 0;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: #dadada;
+                border-radius: 10px;
+                bottom: -20px;
+            }
+
+            &_label {
+                float: left;
+                width: 13em;
+            }
+
+            &_input {
+                position: relative;
+                margin-left: 14em;
+
+                .icon {
+                    position: absolute;
+                    top: 4px;
+                    right: 4px;
+                    cursor: pointer;
+                }
+            }
+
+            input[type=text],
+            input[type=tel],
+            input[type=email],
+            input[type=password] {
+                width: 100%;
+                height: 40px;
+                padding-left: 5px;
+                border-radius: 6px;
+            }
+
+            select {
+                width: 100%;
+                height: 30px;
+                border-radius: 6px;
+            }
+
+            textarea {
+                width: 100%;
+                border-radius: 6px;
+            }
+
+            .postal-code {
+                width: 200px !important;
+            }
+
+            input,
+            select,
+            textarea {
+                border: transparent;
+                transition: all .2s ease-out;
+
+                &:focus {
+                    outline: solid 2px #00679a;
+                }
+            }
+
+            .checkbox-group,
+            .radiobutton-group {
+                margin-bottom: 10px;
+            }
+        }
+
+        .flex-start {
+            align-items: flex-start;
+        }
+
+        .form-button {
+            padding: 30px 0;
+            text-align: center;
+
+            button {
+                width: 200px;
+                height: 40px;
+                background-color: #00679a;
+                border: solid 1px #efefef;
+                border-radius: 3rem;
+                color: #fff;
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    border: solid 2px #00679a;
+                    background-color: #fff;
+                    color: #00679a;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        form {
+            .form-group {
+
+                &_label {
+                    padding-bottom: 10px;
+                    float: none;
+                }
+
+                &_input {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.error {
+    display: block;
+    padding: 5px 0;
+    color: red;
+    font-size: 0.9rem;
+}
+
+.is-none {
+    display: none;
+}

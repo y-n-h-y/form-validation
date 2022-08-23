@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #00679a;
+  text-align: center;
+}
+header h1 {
+  padding: 20px 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+main {
+  background-color: #efefef;
+}
+main .description {
+  text-align: center;
+  padding: 40px 0 10px;
+}
+main .description p {
+  color: #3c3c3c;
+}
+main .required-mark {
+  color: red;
+}
+main form {
+  width: 800px;
+  max-width: 90%;
+  margin: auto;
+  padding: 20px 0;
+}
+main form .form-group {
+  position: relative;
+  margin: 40px 0;
+}
+main form .form-group::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #dadada;
+  border-radius: 10px;
+  bottom: -20px;
+}
+main form .form-group_label {
+  float: left;
+  width: 13em;
+}
+main form .form-group_input {
+  position: relative;
+  margin-left: 14em;
+}
+main form .form-group_input .icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+}
+main form .form-group input[type=text],
+main form .form-group input[type=tel],
+main form .form-group input[type=email],
+main form .form-group input[type=password] {
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  border-radius: 6px;
+}
+main form .form-group select {
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+}
+main form .form-group textarea {
+  width: 100%;
+  border-radius: 6px;
+}
+main form .form-group .postal-code {
+  width: 200px !important;
+}
+main form .form-group input,
+main form .form-group select,
+main form .form-group textarea {
+  border: transparent;
+  transition: all 0.2s ease-out;
+}
+main form .form-group input:focus,
+main form .form-group select:focus,
+main form .form-group textarea:focus {
+  outline: solid 2px #00679a;
+}
+main form .form-group .checkbox-group,
+main form .form-group .radiobutton-group {
+  margin-bottom: 10px;
+}
+main form .flex-start {
+  align-items: flex-start;
+}
+main form .form-button {
+  padding: 30px 0;
+  text-align: center;
+}
+main form .form-button button {
+  width: 200px;
+  height: 40px;
+  background-color: #00679a;
+  border: solid 1px #efefef;
+  border-radius: 3rem;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+main form .form-button button:hover {
+  border: solid 2px #00679a;
+  background-color: #fff;
+  color: #00679a;
+}
+@media screen and (max-width: 768px) {
+  main form .form-group_label {
+    padding-bottom: 10px;
+    float: none;
+  }
+  main form .form-group_input {
+    margin-left: 0;
+  }
+}
+
+.error {
+  display: block;
+  padding: 5px 0;
+  color: red;
+  font-size: 0.9rem;
+}
+
+.is-none {
+  display: none;
+}
