@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
+    <title>フォームバリデーション</title>
+</head>
+
+<body>
+    <header>
+        <h1>Sample Form</h1>
+    </header>
+    <main>
+        <div class="description">
+            <p><span class="required-mark">＊</span>は入力必須項目です</p>
+        </div>
+        <form action="">
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="name">名前<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="text" name="name" id="name" autocomplete="name" value="" placeholder="サンプル 太郎"
+                        class="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="kana">ふりがな<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="text" name="kana" id="kana" value="" placeholder="さんぷる たろう" class="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="tel">電話番号（ハイフンなし）</label>
+                </div>
+                <div class="form-group_input">
+                    <input type="tel" name="tel" id="tel" value="" placeholder="08012345678">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="mail">メールアドレス<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="email" name="mail" id="mail" value="" placeholder="sample@samplemail.com"
+                        class="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="code">郵便番号（ハイフンなし）<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="text" name="code" id="code" value="" autocomplete="postal-code"
+                        class="postal-code required" placeholder="1234567">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="address-level1">都道府県<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="text" name="address-level1" id="address-level1" value="" autocomplete="address-level1"
+                        placeholder="東京都" class="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="address-level2">市区郡<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="text" name="address-level2" id="address-level2" value="" autocomplete="address-level2"
+                        placeholder="〇〇区" class="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="address-line1">住所1<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="text" name="address-level2" id="address-line1" value="" autocomplete="address-line1"
+                        placeholder="〇〇町10-13-12" class="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="address-line2">住所2</label>
+                </div>
+                <div class="form-group_input">
+                    <input type="text" name="address-level2" id="address-line2" value="" autocomplete="address-line2"
+                        placeholder="建物名 部屋番号">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="select">セレクトボックス<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <select name="select" id="select" class="required">
+                        <option value="">選択してください</option>
+                        <option value="選択01">選択01</option>
+                        <option value="選択01">選択02</option>
+                        <option value="選択01">選択03</option>
+                        <option value="選択01">選択04</option>
+                        <option value="選択01">選択05</option>
+                        <option value="選択01">選択06</option>
+                        <option value="選択01">選択07</option>
+                        <option value="選択01">選択08</option>
+                        <option value="選択01">選択09</option>
+                        <option value="選択01">選択10</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <p>チェックボックス<sup class="required-mark">＊</sup></p>
+                </div>
+                <div class="form-group_input">
+                    <div class="checkbox-group checkValidate">
+                        <input type="checkbox" name="checkbox" id="check01" value="チェックボックス01">
+                        <label for="check01">チェックボックス01</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="checkbox" id="check02" value="チェックボックス02">
+                        <label for="check02">チェックボックス02</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="checkbox" id="check03" value="チェックボックス03">
+                        <label for="check03">チェックボックス03</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="checkbox" id="check04" value="チェックボックス04">
+                        <label for="check04">チェックボックス04</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <p>ラジオボタン<sup class="required-mark">＊</sup></p>
+                </div>
+                <div class="form-group_input">
+                    <div class="radiobutton-group radioValidate">
+                        <input type="radio" name="radio" id="radio01" value="ラジオボタン01">
+                        <label for="radio01">ラジオボタン01</label>
+                    </div>
+                    <div class="radiobutton-group">
+                        <input type="radio" name="radio" id="radio02" value="ラジオボタン02">
+                        <label for="radio02">ラジオボタン02</label>
+                    </div>
+                    <div class="radiobutton-group">
+                        <input type="radio" name="radio" id="radio03" value="ラジオボタン03">
+                        <label for="radio03">ラジオボタン03</label>
+                    </div>
+                    <div class="radiobutton-group">
+                        <input type="radio" name="radio" id="radio04" value="ラジオボタン04">
+                        <label for="radio04">ラジオボタン04</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group flex-start">
+                <div class="form-group_label">
+                    <label for="textarea">テキストエリア<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <textarea name="textarea" id="textarea" rows="10" class="required"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="file">ファイルを選択<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="file" name="file" id="file">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group_label">
+                    <label for="pw">パスワード<sup class="required-mark">＊</sup></label>
+                </div>
+                <div class="form-group_input">
+                    <input type="password" name="password" id="pw">
+                    <span class="icon openEye">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24"
+                            height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#333333" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path
+                                d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7">
+                            </path>
+                        </svg>
+                    </span>
+                    <span class="icon closeEye">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-off" width="24"
+                            height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#666666" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <line x1="3" y1="3" x2="21" y2="21"></line>
+                            <path d="M10.584 10.587a2 2 0 0 0 2.828 2.83"></path>
+                            <path
+                                d="M9.363 5.365a9.466 9.466 0 0 1 2.637 -.365c4 0 7.333 2.333 10 7c-.778 1.361 -1.612 2.524 -2.503 3.488m-2.14 1.861c-1.631 1.1 -3.415 1.651 -5.357 1.651c-4 0 -7.333 -2.333 -10 -7c1.369 -2.395 2.913 -4.175 4.632 -5.341">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button>送信する</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="js/form.js"></script>
+
+</body>
+
+</html>
