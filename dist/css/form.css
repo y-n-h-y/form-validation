@@ -96,6 +96,62 @@ main form .form-group .checkbox-group,
 main form .form-group .radiobutton-group {
   margin-bottom: 10px;
 }
+main form .form-group .pw-check-list {
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #999999;
+}
+main form .form-group .pw-check-list > p {
+  position: relative;
+  padding: 5px 0 5px 20px;
+}
+main form .form-group .pw-check-list > p.is-ng::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 12px;
+  background-color: #ff0000;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%) rotate(45deg);
+  transition: all 0.2s ease-in-out;
+}
+main form .form-group .pw-check-list > p.is-ng::after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 12px;
+  background-color: #ff0000;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: all 0.2s ease-in-out;
+}
+main form .form-group .pw-check-list > p.is-ok {
+  color: #00b327;
+}
+main form .form-group .pw-check-list > p.is-ok::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 11px;
+  background-color: #00b327;
+  top: 48%;
+  left: 10px;
+  transform: translateY(-50%) rotate(45deg);
+  transition: all 0.2s ease-in-out;
+}
+main form .form-group .pw-check-list > p.is-ok::after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 5px;
+  background-color: #00b327;
+  top: 51%;
+  left: 4px;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: all 0.2s ease-in-out;
+}
 main form .flex-start {
   align-items: flex-start;
 }

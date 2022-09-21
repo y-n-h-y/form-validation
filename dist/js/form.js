@@ -14,12 +14,17 @@ const fileValue = file.files;
 const openIcon = document.querySelector('.openEye');
 const closeIcon = document.querySelector('.closeEye');
 const password = document.getElementById('pw');
+const pwCheck = form.querySelector('.pw-check-list');
+const pw01 = form.querySelector('.pw01');
+const pw02 = form.querySelector('.pw02');
+const pw03 = form.querySelector('.pw03');
 
 const hiraganaPattern = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu;
 const emailPattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
 const telPattern = /^0\d{9,10}$/;
 const postalCodePattern = /^[0-9]{7}$/;
 const addressPattern = /(都|道|府|県)$/;
+const bigStr = /(?=.*[A-Z])/;
 
 let checkedCount = 0;
 
@@ -29,11 +34,12 @@ openIcon.classList.add('is-none');
 
 
 const scrollElm = () => {
-    const errorElm = form.querySelector('.required');
+    const errorElm = form.querySelector('.error');
+    console.log(errorElm);
     if (errorElm) {
-        const errorElmPosition = errorElm.getBoundingClientRect();
+        const errorElmPosition = errorElm.getBoundingClientRect().top + window.pageYOffset;
         window.scrollTo({
-            top: errorElmPosition,
+            top: errorElmPosition - 70,
             behavior: "smooth"
         });
     }
@@ -44,7 +50,6 @@ const errorMessage = (elm, message) => {
     errSpan.classList.add('error');
     errSpan.textContent = message;
     elm.parentNode.append(errSpan);
-    scrollElm();
 };
 
 for (const check of checkBox) {
@@ -84,6 +89,11 @@ form.addEventListener('submit', function (e) {
     const emailTest = emailPattern.test(mail.value);
     const codeTest = postalCodePattern.test(code.value);
     const addressTest = addressPattern.test(address1.value);
+    const erroElms = document.querySelectorAll('.error');
+
+    for (const errorElm of erroElms) {
+        errorElm.remove();
+    }
 
     for (const elm of requiredElms) {
         const elmValue = elm.value;
@@ -134,5 +144,22 @@ form.addEventListener('submit', function (e) {
     if (!addressTest && address1.value.length > 0) {
         e.preventDefault();
         errorMessage(address1, '都・道・府・県が入力されていません');
+    }
+
+    scrollElm();
+});
+
+password.addEventListener('input', () => {
+    const bigStrTest = bigStr.test(password.value);
+    if (!bigStrTest && password.value.length > 0) {
+        pwCheck.style.color = '#ff0000';
+        pw01.classList.remove('is-ok');
+        pw01.classList.add('is-ng');
+        pwCheck.style.color = '#ff0000';
+    } else if (password.value.length === 0) {
+        pw01.classList.add('is-ng');
+    } else if (bigStrTest) {
+        pw01.classList.remove('is-ng');
+        pw01.classList.add('is-ok');
     }
 });
